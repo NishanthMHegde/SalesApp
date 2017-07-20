@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1592.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmployeeController">
+   <children>
+      <Label layoutX="14.0" layoutY="62.0" prefHeight="27.0" prefWidth="302.0" text="Welcome to the Employees Section:-">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <MenuBar layoutX="6.0" layoutY="7.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="closescreen" mnemonicParsing="false" onAction="#exitEmp" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.29797979797979796" layoutY="100.0" prefHeight="700.0" prefWidth="1042.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox layoutY="-2.0" prefHeight="700.0" prefWidth="306.0">
+                     <children>
+                        <Label prefHeight="43.0" prefWidth="307.0" text="Enter Employee Details:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Enter Employee Name:">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="Ename" prefHeight="51.0" prefWidth="306.0">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </TextField>
+                        <Label text="Enter Employee ID:">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="EID" prefHeight="51.0" prefWidth="306.0">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </TextField>
+                        <Label text="Enter Employee Designation:">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="EDes" prefHeight="51.0" prefWidth="306.0">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </TextField>
+                        <Label text="Enter Employee Salary">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="ESal" prefHeight="51.0" prefWidth="306.0">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#addEmployees" text="Add Employee">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="75.0" right="20.0" top="30.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <HBox layoutY="1.0" prefHeight="57.0" prefWidth="726.0">
+                     <children>
+                        <Label prefHeight="57.0" prefWidth="180.0" text="Employee ID">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="57.0" prefWidth="180.0" text="Employee Name">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="57.0" prefWidth="180.0" text="Designation">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="57.0" prefWidth="180.0" text="Salary">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <ListView fx:id="Eid" layoutY="58.0" prefHeight="641.0" prefWidth="180.0" />
+                  <ListView fx:id="ENAME" layoutX="180.0" layoutY="58.0" prefHeight="641.0" prefWidth="180.0" />
+                  <ListView fx:id="EDES" layoutX="360.0" layoutY="58.0" prefHeight="641.0" prefWidth="180.0" />
+                  <ListView fx:id="ESAL" layoutX="540.0" layoutY="58.0" prefHeight="641.0" prefWidth="189.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <TextField fx:id="TS" layoutX="855.0" layoutY="800.0" promptText="Total Salary" />
+      <Button layoutX="1091.0" layoutY="897.0" mnemonicParsing="false" onAction="#calculateExpenses" prefHeight="61.0" prefWidth="177.0" text="Calculate Expenses">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="1127.0" layoutY="100.0" text="OverHeads">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="1077.0" layoutY="163.0" text="Power Consumption OverHead" />
+      <TextField fx:id="PC" layoutX="1086.0" layoutY="202.0" />
+      <Label layoutX="1077.0" layoutY="256.0" text="Transportation OverHead" />
+      <TextField fx:id="TC" layoutX="1086.0" layoutY="293.0" />
+      <Label layoutX="1112.0" layoutY="346.0" text="Raw Materials">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="1077.0" layoutY="450.0" text="Chassis" />
+      <Label layoutX="1077.0" layoutY="548.0" text="Body" />
+      <Label layoutX="1079.0" layoutY="652.0" text="Engine" />
+      <Label layoutX="1079.0" layoutY="767.0" text="Tires" />
+      <TextField fx:id="CH" layoutX="1086.0" layoutY="485.0" />
+      <TextField fx:id="BO" layoutX="1086.0" layoutY="586.0" />
+      <TextField fx:id="ENG" layoutX="1086.0" layoutY="694.0" />
+      <TextField fx:id="TI" layoutX="1086.0" layoutY="816.0" />
+      <TextField fx:id="EXP" layoutX="190.0" layoutY="897.0" prefHeight="51.0" prefWidth="236.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Label layoutX="200.0" layoutY="837.0" text="Tractor Expense:" />
+      <Label layoutX="602.0" layoutY="837.0" text="Lorry Expense:" />
+      <TextField fx:id="EXP1" layoutX="602.0" layoutY="897.0" prefHeight="51.0" prefWidth="220.0">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
+      <Label layoutX="1095.0" layoutY="399.0" text="Tractor">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="1423.0" layoutY="399.0" text="Lorry">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="1406.0" layoutY="450.0" text="Chassis" />
+      <Label layoutX="1406.0" layoutY="548.0" text="Body" />
+      <Label layoutX="1409.0" layoutY="652.0" text="Engine" />
+      <Label layoutX="1408.0" layoutY="767.0" text="Tires" />
+      <TextField fx:id="CH1" layoutX="1388.0" layoutY="485.0" />
+      <TextField fx:id="BO1" layoutX="1388.0" layoutY="586.0" />
+      <TextField fx:id="ENG1" layoutX="1388.0" layoutY="694.0" />
+      <TextField fx:id="TI1" layoutX="1388.0" layoutY="816.0" />
+      <Button layoutX="1338.0" layoutY="267.0" mnemonicParsing="false" onAction="#calculateOverhead" prefHeight="61.0" prefWidth="220.0" text="Calculate OverHeads" />
+      <TextField fx:id="OH" layoutX="1334.0" layoutY="182.0" prefHeight="61.0" prefWidth="228.0">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
+   </children>
+</AnchorPane>
